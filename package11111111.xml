@@ -7,7 +7,7 @@
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="pi@todo.todo">pi</maintainer>
+  <maintainer email="JoseCarlos@todo.todo">JoseCarlos</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -48,7 +48,7 @@
   <!--   <test_depend>gtest</test_depend> -->
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
- <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <!-- build_depend>rosserial</build_depend-->
@@ -66,6 +66,8 @@
   <!-- exec_depend>rosserial</exec_depend-->
   <exec_depend>rosserial_arduino</exec_depend>
    <exec_depend>message_runtime</exec_depend>
+
+
 
 
   <!-- The export tag contains other, unspecified, tags -->
