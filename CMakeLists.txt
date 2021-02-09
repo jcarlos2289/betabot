@@ -166,6 +166,7 @@ catkin_install_python(PROGRAMS
    scripts/colors___ros_node.py
    scripts/pir___ros_node.py
    scripts/drivers_ros_node.py
+   scripts/joy_ros_node.py	
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
