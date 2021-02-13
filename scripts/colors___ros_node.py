@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 import rospy
 import serial
-from sorabot.msg import colors_msg
+from betabot.msg import colors_msg
 
 # Mario Soranno
 
-port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
+port = serial.Serial("/dev/ttyUSB1", baudrate=9600, timeout=3.0)
 
 def readlineCR(port):
     rv = ""

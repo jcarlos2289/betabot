@@ -1,7 +1,7 @@
 // Mario Soranno
 #include "wiringPi.h"
 #include "ros/ros.h"
-#include "sorabot/ultrasonic_msg.h"
+#include "betabot/ultrasonic_msg.h"
 
 // Mario Soranno
 
@@ -9,8 +9,8 @@ int main(int argc, char **argv)
 	{
 	ros::init(argc, argv, "ultrasonic");	
 	ros::NodeHandle node_obj;
-	ros::Publisher pub = node_obj.advertise<sorabot::ultrasonic_msg>("ultrasonic",10);
-	sorabot::ultrasonic_msg msg;
+	ros::Publisher pub = node_obj.advertise<betabot::ultrasonic_msg>("ultrasonic",10);
+	betabot::ultrasonic_msg msg;
 	ros::Rate loop_rate(10);
 	wiringPiSetup();
 	pinMode(6, OUTPUT);
