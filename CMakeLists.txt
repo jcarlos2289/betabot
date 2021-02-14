@@ -52,9 +52,10 @@ find_package(Boost REQUIRED COMPONENTS system)
 add_message_files(
    FILES
    colors_msg.msg
-   kemet_msg.msg
+   pir_msg.msg
    drivers_msg.msg
    ultrasonic_msg.msg
+   linefollower_msg.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -168,7 +169,8 @@ catkin_install_python(PROGRAMS
    scripts/colors___ros_node.py
    scripts/pir___ros_node.py
    scripts/drivers_ros_node.py
-   scripts/joy_ros_node.py	
+   scripts/joy_ros_node.py
+   scripts/line_followers_ros_node.py 		
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

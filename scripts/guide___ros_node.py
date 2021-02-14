@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 import rospy
-from sorabot.msg import linefollower_msg
-from sorabot.msg import drivers_msg
-from sorabot.msg import ultrasonic_msg
-from sorabot.msg import kemet_msg
-from sorabot.msg import colors_msg
+from betabot.msg import linefollower_msg
+from betabot.msg import drivers_msg
+from betabot.msg import ultrasonic_msg
+from betabot.msg import pir_msg
+from betabot.msg import colors_msg
 from std_msgs.msg import Int8
-from sorabot.msg import uvcontrol_msg
+from betabot.msg import uvcontrol_msg
 
 # Mario Soranno
 
@@ -18,8 +18,8 @@ followerDX = 9
 ultrasonicF = 9
 ultrasonicB = 9
 
-kemetF = 9
-kemetB = 9
+pirF = 9
+pirB = 9
 
 SX_Red = 9
 SX_Green = 9
@@ -54,12 +54,12 @@ def callback_ultrasonic(msgultra):
 	ultrasonicF = msgultra.ultrasonicF
 	ultrasonicB = msgultra.ultrasonicB
 
-def callback_kemet(msgkemet):	
+def callback_pir(msgpir):	
 	global ultrasonicF
 	global ultrasonicB
 	
-	kemetF = msgkemet.kemetF
-	kemetB = msgkemet.kemetB
+	pirF = msgpir.pirF
+	pirB = msgpir.pirB
 
 def callback_colors(msgcolors):
 	global SX_Red
@@ -137,7 +137,7 @@ if __name__ == '__main__':
 	pub_uvcontrol = rospy.Publisher("uvcontrol", uvcontrol_msg, queue_size = 10)
 	sub_linefollower = rospy.Subscriber("linefollower", linefollower_msg, callback_linefollower)	
 	sub_ultrasonic = rospy.Subscriber("ultrasonic", ultrasonic_msg, callback_ultrasonic)	
-	sub_kemet = rospy.Subscriber("kemet", kemet_msg, callback_kemet)	
+	sub_pir = rospy.Subscriber("pir", pir_msg, callback_pir)	
 	sub_colors = rospy.Subscriber("colors", colors_msg, callback_colors)
 	sub_uvcvalue = rospy.Subscriber("uvcvalue", Int8, callback_uvcvalue)
 	msgdri = drivers_msg()
@@ -161,7 +161,7 @@ if __name__ == '__main__':
 		msgdri.direction = 0
 		
 		if uvcvalue_test == 1:	# -------- UV-C present --------
-			if ultrasonicF == 1 or ultrasonicB == 1 or kemetF == 1 or kemetB == 1:	# -------- pause --------
+			if ultrasonicF == 1 or ultrasonicB == 1 or pirF == 1 or pirB == 1:	# -------- pause --------
 				msgdri.rotation = 0
 				msgdri.velocity = 0
 				msguvc.on = 0 			# UV-C Lamps off - vertical

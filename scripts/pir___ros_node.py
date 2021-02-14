@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 import serial
-from betabot.msg import kemet_msg
+from betabot.msg import pir_msg
 
 # Jose Carlos Rangel
 
@@ -18,11 +18,11 @@ def readlineCR(port):
 
 if __name__ == '__main__':
 	rospy.init_node('pir')
-	pub = rospy.Publisher("/kemet_msg", kemet_msg, queue_size = 10)
+	pub = rospy.Publisher("/pir_msg", pir_msg, queue_size = 10)
 	rate = rospy.Rate(10)
 	inc = 0
-	kemetF = 0
-	kemetB = 0
+	pirF = 0
+	pirB = 0
 	
 	#print "evaluando"
 	while not rospy.is_shutdown():	
@@ -33,14 +33,14 @@ if __name__ == '__main__':
 		if numelement == 4:
 			arrayric[3] = arrayric[3].replace('\r', '')
 			if arrayric[0] == "SF" and arrayric[2] == "SB":
-				kemetF = int(arrayric[1])
-				kemetB = int(arrayric[3])
+				pirF = int(arrayric[1])
+				pirB = int(arrayric[3])
 				inc = inc + 1
 				
-		msg = kemet_msg()
+		msg = pir_msg()
 		msg.inc = inc
-		msg.kemetF = kemetF
-		msg.kemetB = kemetB 
+		msg.pirF = pirF
+		msg.pirB = pirB 
 		
 		pub.publish(msg)
 		rate.sleep()

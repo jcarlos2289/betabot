@@ -1,25 +1,27 @@
-# betabot
+# betabot - Prototipo de Robot Movil
 
 ## Código fuente para el robot Movil BetaBot
 
-## Desarrollo por José Carlos Rangel
-## SENACYT - UTP - PANAMA
+Desarrollo por José Carlos Rangel
+SENACYT - UTP - PANAMA
 
-### Basado en SoraBot UV
-
-
+Basado en SoraBot UV
 
 
+## Software y Hardware
 ------------------------------------
 
-Raspberry Pi 4.0
-Arduino Nano
-ROS Melodic 
-Raspbian OS Buster
+Placas
+* Raspberry Pi 4.0
+* Arduino Nano
+
+Software
+* ROS Melodic 
+* Raspbian OS Buster
 
 Sensores
-*. Ultrasonico HCSR04
-*. Color GY-31
-*. PIR 
-*. Infrarojo MH 
+* Ultrasonico HCSR04
+* Color GY-31
+* PIR HC-SR501
+* Infrarojo MH 
 

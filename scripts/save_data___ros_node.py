@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 import time
-from sorabot.msg import uvcontrol_msg
+from betabot.msg import uvcontrol_msg
 
 # Mario Soranno
 

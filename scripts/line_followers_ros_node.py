@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from gpiozero import LineSensor
-from sorabot.msg import linefollower_msg
+from betabot.msg import linefollower_msg
 
 # Mario Soranno
 
